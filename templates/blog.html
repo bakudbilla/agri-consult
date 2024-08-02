@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConsult</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/blog.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html ">
+                <img src="/static/images/logo.png " alt="Logo "></a>
+            <div class="nav-links " id="navLinks ">
+                <i class="fa fa-times " onclick="hideMenu() "></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/blog">BLOG</a></li>
+                    <li><a href="/book">APPOINTMENT</a></li>
+                    <li><a href="/discussions">CHAT AREA</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li>
+                        <p>Welcome, {{ current_user.username }}!</p>
+                    </li>
+
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars " onclick="showMenu() "></i>
+        </nav>
+        <h1>BLOG</h1>
+    </section>
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Cutting-Edge Agricultural Machinery and Tools</h1>
+            <p>Explore top-tier machinery and tools designedto boost productivity and efficiency on your farm. Farming becomes less labor intensive and more profitable. </p>
+            <a class="btn" href="/blog/article1.html">Read Article</a>
+        </div>
+    </div>
+
+    <!-- featured post -->
+    <section>
+        <div class="featured-post">
+            <div class="featured-left">
+                <div class="featured-card">
+                    <img src="/static/images/sustainablefarming.jpeg" alt="" />
+                    <h2 class="">Innovative Sustainable<br> Farming Pracices</h2>
+                    <p>
+                        DIscover the various sustainable and Eco-friendly farming practices to improve yield and to prevent the soil from loosing it's nutrients.
+                    </p>
+                    <a href="/blog/article1pyth" class="btn-outline">Read Article</a>
+                </div>
+                <div class="featured-card">
+                    <img src="/static/images/greenhouse.jpg" alt="" />
+                    <h2>Green House Farming Technology</h2>
+                    <p>
+                        Learn about green house farming technology to grow healthy and nutritious vegetables
+                    </p>
+                    <a href="/blog/article1.html" class="btn-outline">Read Article</a>
+                </div>
+            </div>
+            <div class="featured-right">
+                <div>
+                    <h3>Introduction to Hyproponics Farming</h3>
+                    <p>
+                        Explore the Hyproponics farming and how to integrate it into your farming practices to harvest clean and healthy produce.</p>
+                    <a href="/blog/article1.html" class="readme-btn">Read in 3 minutes</a>
+                </div>
+                <div>
+                    <h3>What is Smart Farming?</h3>
+                    <p>
+                        Explore the world of smart Farming and how to incoperate it's methods in your farm.</p>
+                    <a href="/blog/article1.html" class="readme-btn">Read in 8 minutes</a>
+                </div>
+                <div>
+                    <h3>Crop Rotation?</h3>
+                    <p>
+                        A principle of farming that improves soil nutients.
+                    </p>
+                    <a href="/blog/article1.html" class="readme-btn">Read in 3 minutes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Science Behind SmartUV -->
+    <section class="recent-post">
+        <div class="SmartUV">
+            <div class="blog-card">
+                <img src="/static/images/organicfertilizer.jpeg" alt="" />
+                <h3>Organic Feritilizer</h3>
+                <p>Learn about the importance of organice Fertilizer in the farmer and the benefits it has in the soil</p>
+                <a href="/blog/article1.html" class="readme-btn">Read in 2 minutes</a>
+            </div>
+            <div class="blog-card">
+                <img src="/static/images/Agribusiness.jpeg" alt="" />
+                <h3>AgriBusiness</h3>
+                <p>
+                    UV-C light is growing in popularity as a form of disinfection - but it isn't new
+                </p>
+                <a href="/blog/article1.html" class="readme-btn">Read in 8 minutes</a>
+            </div>
+            <div class="blog-card">
+                <img src="/static/images/vegetable.jpeg" alt="" />
+                <h3>vegetable Farming</h3>
+                <p>
+                    Safety practices were developed to best handle it with care
+                </p>
+                <a href="/blog/article1.html" class="readme-btn">Read in 1 minutes</a>
+            </div>
+            <div class="blog-card">
+                <img src="/static/images/postharvest.jpeg" alt="" />
+                <h3>Post Harvest</h3>
+                <p>
+                    It's most common to see UV-C used in hospitals as it is sterilizing the air.
+                </p>
+                <a href="/blog/`article1.html" class="readme-btn">Read in 12 minutes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- newsletter -->
+    <div class="newsletter">
+        <div>
+            <h2>Subscribe to our Weekly Newsletter.</h2>
+            <p>Stay updated with the latest agricultural insights, expert advice, and innovative solutions. Join our community of farmers, researchers, and agri-enthusiasts by subscribing to our newsletter</p>
+
+            <div class="form">
+                <input type="email" name="email" id="email" placeholder="Enter your email address">
+                <input type="submit" value="Subscribe" class="btn">
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <footer class="footer">
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="/contact">Contact Us</a></li>
+                <li class="menu__item"><a class="menu__link" href="/blog">Blog</a></li>
+                <li class="menu__item">
+                    <a class="menu__link" href="/book">Appointment</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="/discussions">CHAT AREA</a>
+                </li>
+
+            </ul>
+            <p>&copy;2024 AgriConsult | All Rights Reserved</p>
+        </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+        <!-- script tags -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

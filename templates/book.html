@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/blog.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/book.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>AgriConsult-Appointment</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <section class="sub-header">
+        <nav>
+            <a href="index.html ">
+                <img src="/static/images/logo.png " alt="Logo "></a>
+            <div class="nav-links " id="navLinks ">
+                <i class="fa fa-times " onclick="hideMenu() "></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/blog">BLOG</a></li>
+                    <li><a href="/book">APPOINTMENT</a></li>
+                    <li><a href="/discussions">CHAT AREA</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li>
+                        <p>Welcome, {{ current_user.username }}!</p>
+                    </li>
+
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars " onclick="showMenu() "></i>
+        </nav>
+    </section>
+    <div class="container">
+        <div id="expertList">
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image.jpg');"></div>
+                <h3>Abanga Herbert</h3>
+                <p>Specialization: Crop Science</p>
+                <p>Experience: 15 years</p>
+                <button onclick="openModal('Abanga Herbert')">Book Appointment</button>
+            </div>
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image1.jpg');"></div>
+                <h3>Prof. Mbilla Magdalene</h3>
+                <p>Specialization: Soil Management</p>
+                <p>Experience: 20 years</p>
+                <button onclick="openModal('Prof. Mbilla Magdalene')">Book Appointment</button>
+            </div>
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image2.jpg');"></div>
+                <h3>Dr. Tagbor Trinity</h3>
+                <p>Specialization: Sustainable Farming</p>
+                <p>Experience: 10 years</p>
+                <button onclick="openModal('Dr. Tagbor Trinity')">Book Appointment</button>
+            </div>
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image3.jpg');"></div>
+                <h3>Dr. Marian Owusu</h3>
+                <p>Specialization: Agricultural Economics</p>
+                <p>Experience: 12 years</p>
+                <button onclick="openModal('Dr. Marian Owusu')">Book Appointment</button>
+            </div>
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image2.jpg');"></div>
+                <h3>Dr. Ackom Micheal</h3>
+                <p>Specialization: Livestock Management</p>
+                <p>Experience: 18 years</p>
+                <button onclick="openModal('Dr. Ackom Micheal')">Book Appointment</button>
+            </div>
+            <div class="expert">
+                <div class="expert-image" style="background-image: url('/static/images/expert-image4.jpg');"></div>
+                <h3>Prof. Inusah Zelia</h3>
+                <p>Specialization: Agribusiness</p>
+                <p>Experience: 22 years</p>
+                <button onclick="openModal('Prof. Inusah Zelia')">Book Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Appointment</h2>
+            <form action="{{ url_for('book_appointment') }}" method="POST">
+                <input type="text" id="expertName" name="expertName" readonly>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+                <input type="time" id="appointmentTime" name="appointmentTime" required>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{url_for('static',filename='js/book.js')}}"></script>
+</body>
+
+</html>
