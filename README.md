@@ -15,7 +15,7 @@ Link:
  <h1>User authentication (signup and login)</h1>
  
 ![login](https://github.com/user-attachments/assets/ac72bb94-1561-4c99-94cf-ecb200047f84)
-![Screenshot 2024-07-31 180535](https://github.com/user-attachments/assets/249ac999-34aa-43e4-8918-f525773e4e42)
+![signup](https://github.com/user-attachments/assets/f7b9028b-411a-429c-8b8e-18d51b7ad3e6)
 
   <h1>Appointment booking with agricultural experts</h1>
   
