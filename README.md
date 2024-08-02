@@ -1,4 +1,5 @@
 # AgriConsult Flask Application
+
 ## Description
 AgriConsult is a web application built with Flask that provides agricultural consulting services. It features a booking system for appointments, a discussion forum, and a blog section for sharing agricultural insights. This platform provides farmers with access to Agric Experts where they can book sessions to talk to farmers on ways of improving yield and learn about better ways of storing their produce and modern farming methods.
 Individuals who are passionate about farming but not as a full-time job can also book sessions on how to start up farms in their homes. Mission Statement;
@@ -6,33 +7,33 @@ Individuals who are passionate about farming but not as a full-time job can also
 Link: 
 
 
-![Screenshot 2024-07-31 180246](https://github.com/user-attachments/assets/2828540a-17ad-4e41-803a-c470f2a57312)
+![home](https://github.com/user-attachments/assets/a5a49f7d-0e0f-43d3-9bdd-31fbbab02f69)
 
 
 
 ## Features
  <h1>User authentication (signup and login)</h1>
  
-![Screenshot 2024-07-31 180514](https://github.com/user-attachments/assets/bf13b4c2-1a36-4cb3-8553-765131e4b374)
+![login](https://github.com/user-attachments/assets/ac72bb94-1561-4c99-94cf-ecb200047f84)
 ![Screenshot 2024-07-31 180535](https://github.com/user-attachments/assets/249ac999-34aa-43e4-8918-f525773e4e42)
 
   <h1>Appointment booking with agricultural experts</h1>
   
-  ![Screenshot 2024-07-31 180310](https://github.com/user-attachments/assets/31528b0c-dae3-4eb9-9539-1c8829733393)
-![Screenshot 2024-07-31 180331](https://github.com/user-attachments/assets/89e3fde1-030d-4141-9e19-192d143bfc51)
+![book](https://github.com/user-attachments/assets/95688be5-1578-4091-a0c0-d20c9b23a28c)
+![book1](https://github.com/user-attachments/assets/76d740a7-e7c9-4fff-87b6-c3e0d362a1da)
 
 
 - Discussion forum for agricultural topics
-  ![Screenshot 2024-07-31 180420](https://github.com/user-attachments/assets/6a003da3-ccd2-4616-bfc6-0ee9bbbf8d59)
+![connect](https://github.com/user-attachments/assets/ae8508e5-d0ed-4002-a33a-613303c3ad03)
 
 <h1>Blog section with agricultural articles</h1>
 
-![Screenshot 2024-07-31 185323](https://github.com/user-attachments/assets/778d6139-ec6d-45a6-a219-87b3f651292f)
+![blog](https://github.com/user-attachments/assets/aa4a7e95-187b-4335-83cc-18ea94c6c2fe)
 
 
   <h1>CONTACT US</h1>
   
-![Screenshot 2024-07-31 180448](https://github.com/user-attachments/assets/2e7b6e97-a7d8-4bcd-90ab-6821afc7d23a)
+![contact](https://github.com/user-attachments/assets/338bd5be-3548-414a-9a38-178327e519cf)
 
 ## Prerequisites
 
