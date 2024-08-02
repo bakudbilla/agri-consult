@@ -17,12 +17,12 @@ app.config.from_object(Config)
 
 
 # Configuration for Flask-Mail
-app.config['SECRET_KEY'] = '037bc6fc09a23a11be3bca13c9ddd15bc7627dfdeebaac11'
+app.config['SECRET_KEY'] = 'YOUR_SECRET_KEY'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'b.akudbilla@alustudent.com'
-app.config['MAIL_PASSWORD'] = 'wnueqfpchhppfgtf'
+app.config['MAIL_PASSWORD'] = 'YOUR_APP_PASSWORD'
 app.config['MAIL_DEFAULT_SENDER'] = 'b.akudbilla@alustudent.com'
 
 mail = Mail(app)
